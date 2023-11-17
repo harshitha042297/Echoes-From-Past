@@ -10,6 +10,8 @@ import { useDispatch } from 'react-redux';
 import {jwtDecode} from 'jwt-decode';
 import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
+import memoriesLogo from '../../images/memoriesLogo.png';
+import memoriesText from '../../images/memoriesText.png';
 
 const Navbar = () => {
 
@@ -43,19 +45,12 @@ const Navbar = () => {
 
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
-      <div className={classes.brandContainer}>
-        <Typography
-          component={Link}
-          to="/"
-          className={classes.heading}
-          style={typographyStyle}
-          variant="h4"
-          align="center"
-        >
-          Echoes From Past
-        </Typography>
-        {/* <img className={classes.image} src={memories} alt="memories" height="60"/> */}
-      </div>
+     
+      <Link to="/" className={classes.brandContainer}>
+        <img component={Link} to="/" src={memoriesText} alt="icon" height="45px" />
+        {/* <img className={classes.image} src={memoriesLogo} alt="icon" height="40px" /> */}
+      </Link>
+
       <Toolbar className={classes.toolbar}>
         {user ? (
           <div className={classes.profile}>
